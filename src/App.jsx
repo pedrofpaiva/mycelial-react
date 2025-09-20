@@ -132,15 +132,15 @@ function App() {
                 }
               ].map((event, index) => (
                 <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg">
-                  <div className="flex flex-col md:flex-row h-[270px]">
-                    <div className="w-full md:w-1/3 h-[270px] md:h-full">
+                  <div className="flex flex-col md:flex-row min-h-[270px]">
+                    <div className="w-full md:w-1/3 h-[270px] md:h-auto">
                       <img src={event.image} alt={`Lab Image ${index + 1}`} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex flex-col p-4 md:w-2/3">
-                      <div>
+                      <div className="flex-grow">
                         <a href="#"><h2 className="text-lg font-bold mb-2 text-[rgb(51,51,51)]">{event.title}</h2></a>
-                        <p className="text-sm text-gray-600 mb-1">{event.description}</p>
-                        <p className="text-sm text-gray-600 mb-1">
+                        <p className="text-sm text-gray-600 mb-2">{event.description}</p>
+                        <p className="text-sm text-gray-600 mb-2">
                           For accommodations, guests can stay at{' '}
                           <a 
                             href={event.hotelUrl} 
@@ -153,7 +153,7 @@ function App() {
                           . If you would like to extend your stay, please contact us at 888-336-1586.
                         </p>
                       </div>
-                      <div className="flex flex-col gap-3 mt-auto pt-3">
+                      <div className="flex flex-col gap-3 pt-4">
                         <div className="flex flex-wrap gap-1">
                           <span className="inline-flex items-center rounded-full bg-[#F5DFCB] px-2 py-0.5 text-xs font-medium text-black ring-1 ring-inset ring-[#E5CFB8]">Workshop</span>
                           <span className="inline-flex items-center rounded-full bg-[#F5DFCB] px-2 py-0.5 text-xs font-medium text-black ring-1 ring-inset ring-[#E5CFB8]">Online</span>
