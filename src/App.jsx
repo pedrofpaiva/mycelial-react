@@ -1,9 +1,7 @@
 import { useEffect } from 'react'
 import heroBackground from './assets/hero-3.png'
 import logoWhite from './assets/logo-white.png'
-import lab1Image from './assets/lab-1.png'
-import lab2Image from './assets/lab-2.png'
-import lab3Image from './assets/lab-3.png'
+import eventImage from './assets/event-1.png'
 // Team member images
 import holmesImage from './assets/team/Headshot Holmes Final.jpeg'
 import mitchellImage from './assets/team/Headshot H Mitchell.jpeg'
@@ -26,20 +24,26 @@ function App() {
       {/* Hero Section */}
       <section className="min-h-screen relative flex items-center overflow-hidden" id="home">
         {/* Navigation */}
-        <div className="absolute top-8 right-12 z-20">
+        <nav className="absolute top-0 left-0 right-0 z-20 px-[5%] py-6 flex justify-between items-center">
+          <img src={logoWhite} alt="Mycelial Health Logo" className="h-24 w-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]" />
           <a href="#team" className="nav-link text-white text-lg font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] no-underline">About Us</a>
-        </div>
+        </nav>
+
         {/* Background Image */}
         <img src={heroBackground} alt="Hero Background" className="absolute inset-0 w-full h-full object-cover" />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
         
-        <div className="relative z-10 container ml-[5%] max-w-[724px]">
-          <img src={logoWhite} alt="Mycelial Health Logo" className="h-24 w-auto mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]" />
-          <h1 className="text-2xl font-bold mb-4 tracking-[-2px] leading-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">Flourishing People</h1>
-          <p className="text-lg opacity-90 max-w-2xl text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
-            Mycelial Health is dedicated to the natural cultivation, research and development of psilocybin and related species of mushroom. With the goal of supporting their use in effective treatment of mental and public health issues in the USVI and beyond.
-          </p>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+        
+        <div className="relative z-10 container mx-auto px-[5%] mt-24">
+          <div className="max-w-[800px]">
+            <h1 className="text-[72px] font-bold mb-8 leading-none tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
+              Flourishing People
+            </h1>
+            <p className="text-xl leading-relaxed opacity-90 max-w-2xl text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
+              Mycelial Health is dedicated to the natural cultivation, research and development of psilocybin and related species of mushroom. With the goal of supporting their use in effective treatment of mental and public health issues in the USVI and beyond.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -53,22 +57,12 @@ function App() {
             <div className="flex flex-col gap-6">
               {[
                 {
-                  image: lab1Image,
+                  image: eventImage,
                   title: 'Mushroom Cultivation Workshop',
-                  description: 'Join us for an interactive session on mushroom cultivation techniques.',
-                  location: 'Online'
-                },
-                {
-                  image: lab2Image,
-                  title: 'Psychedelic Research Seminar',
-                  description: 'Explore the latest findings in psychedelic-assisted therapy and its benefits.',
-                  location: 'St. Thomas'
-                },
-                {
-                  image: lab3Image,
-                  title: 'Community Outreach Program',
-                  description: 'Learn about our initiatives to make mental health treatments more accessible.',
-                  location: 'St. Thomas'
+                  description: 'Mycelial Health is holding a conference in the U.S. Virgin Islands, from February 5-7, 2026, to learn about our latest projects in cultivating medicinal mushrooms and advancing innovative mental health treatments. This is an invitation only event, but contact us if you are interested in participating.',
+                  accommodation: 'For accommodations, guests can stay at The Hideaway at Hull Bay. If you would like to extend your stay, please contactat 888-336-1586.',
+                  hotelUrl: 'https://hideawayhullbay.com/'
+                  
                 }
               ].map((event, index) => (
                 <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg">
@@ -80,20 +74,31 @@ function App() {
                       <div>
                         <a href="#"><h2 className="text-lg font-bold mb-2 text-[rgb(51,51,51)]">{event.title}</h2></a>
                         <p className="text-sm text-gray-600 mb-1">{event.description}</p>
-                        <p className="text-sm text-gray-500">{event.location}</p>
+                        <p className="text-sm text-gray-600 mb-1">
+                          For accommodations, guests can stay at{' '}
+                          <a 
+                            href={event.hotelUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-[#294C60] hover:opacity-80 transition-colors"
+                          >
+                            The Hideaway at Hull Bay
+                          </a>
+                          . If you would like to extend your stay, please contact us at 888-336-1586.
+                        </p>
                       </div>
                       <div className="flex flex-col gap-3 mt-auto pt-3">
                         <div className="flex flex-wrap gap-1">
-                          <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">Workshop</span>
-                          <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">Online</span>
-                          <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">Cultivation</span>
+                          <span className="inline-flex items-center rounded-full bg-[#F5DFCB] px-2 py-0.5 text-xs font-medium text-black ring-1 ring-inset ring-[#E5CFB8]">Workshop</span>
+                          <span className="inline-flex items-center rounded-full bg-[#F5DFCB] px-2 py-0.5 text-xs font-medium text-black ring-1 ring-inset ring-[#E5CFB8]">Online</span>
+                          <span className="inline-flex items-center rounded-full bg-[#F5DFCB] px-2 py-0.5 text-xs font-medium text-black ring-1 ring-inset ring-[#E5CFB8]">Cultivation</span>
                         </div>
-                        <button className="rounded-button inline-flex items-center justify-start whitespace-nowrap transition-all duration-200 ease-in-out hover:translate-x-1 focus-visible:outline-none text-blue-600 gap-2 bg-transparent p-0 text-sm" title="View event">
+                        {/* <button className="rounded-button inline-flex items-center justify-start whitespace-nowrap transition-all duration-200 ease-in-out hover:translate-x-1 focus-visible:outline-none text-blue-600 gap-2 bg-transparent p-0 text-sm" title="View event">
                           View event
                           <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 15 15" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" clipRule="evenodd" d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z" fill="currentColor"></path>
                           </svg>
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   </div>
