@@ -1,4 +1,6 @@
 import { useEffect } from 'react'
+import Lenis from 'lenis'
+import { motion } from 'framer-motion'
 import heroBackground from './assets/hero-3.png'
 import logoWhite from './assets/logo-white.png'
 import eventImage from './assets/event-1.png'
@@ -13,6 +15,33 @@ import danielleImage from './assets/team/Danielle_2022_929.jpg'
 
 function App() {
   useEffect(() => {
+    const lenis = new Lenis()
+    
+    const parallaxEffect = () => {
+      const scrolled = window.scrollY
+      const heroBackground = document.querySelector('.hero-background')
+      const heroContent = document.querySelector('.hero-content')
+      
+      if (heroBackground && heroContent) {
+        heroBackground.style.transform = `translateY(${scrolled * 0.15}px) scale(1.1)`
+        heroContent.style.transform = `translateY(${scrolled * 0.1}px)`
+      }
+    }
+
+    function raf(time) {
+      lenis.raf(time)
+      parallaxEffect()
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+    }
+  }, [])
+
+  useEffect(() => {
     const yearSpan = document.getElementById('currentYear')
     if (yearSpan) {
       yearSpan.textContent = new Date().getFullYear()
@@ -24,18 +53,60 @@ function App() {
       {/* Hero Section */}
       <section className="min-h-screen relative flex items-center overflow-hidden" id="home">
         {/* Navigation */}
-        <nav className="absolute top-0 left-0 right-0 z-20 px-[5%] py-6 flex justify-between items-center">
+        <motion.nav 
+          className="absolute top-0 left-0 right-0 z-20 px-[5%] py-6 flex justify-between items-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 2.3,
+            ease: "easeOut",
+            delay: 0.9
+          }}
+        >
           <img src={logoWhite} alt="Mycelial Health Logo" className="h-24 w-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]" />
           <a href="#team" className="nav-link text-white text-lg font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] no-underline">About Us</a>
-        </nav>
+        </motion.nav>
 
-        {/* Background Image */}
-        <img src={heroBackground} alt="Hero Background" className="absolute inset-0 w-full h-full object-cover" />
+        {/* Background Image with Parallax and Fade */}
+        <motion.div 
+          className="absolute inset-0 w-full h-full overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 2.3,
+            ease: "easeOut"
+          }}
+        >
+          <img 
+            src={heroBackground} 
+            alt="Hero Background" 
+            className="hero-background absolute inset-0 w-full h-[120%] -top-[10%] object-cover origin-top will-change-transform"
+          />
+        </motion.div>
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 2.3,
+            ease: "easeOut",
+            delay: 0.3
+          }}
+        />
         
-        <div className="relative z-10 container mx-auto px-[5%] mt-24">
+        {/* Content with Parallax and Fade */}
+        <motion.div 
+          className="hero-content relative z-10 container mx-auto px-[5%] mt-24 will-change-transform"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 2.3,
+            ease: "easeOut",
+            delay: 0.6
+          }}
+        >
           <div className="max-w-[800px]">
             <h1 className="text-[72px] font-bold mb-8 leading-none tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
               Flourishing People
@@ -44,7 +115,7 @@ function App() {
               Mycelial Health is dedicated to the natural cultivation, research and development of psilocybin and related species of mushroom. With the goal of supporting their use in effective treatment of mental and public health issues in the USVI and beyond.
             </p>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* News and Events Section */}
