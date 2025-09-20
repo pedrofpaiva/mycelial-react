@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import Lenis from 'lenis'
 import { motion } from 'framer-motion'
 import heroBackground from './assets/hero-3.png'
 import logoWhite from './assets/logo-white.png'
@@ -15,8 +14,6 @@ import danielleImage from './assets/team/Danielle_2022_929.jpg'
 
 function App() {
   useEffect(() => {
-    const lenis = new Lenis()
-    
     const parallaxEffect = () => {
       const scrolled = window.scrollY
       const heroBackground = document.querySelector('.hero-background')
@@ -28,16 +25,14 @@ function App() {
       }
     }
 
-    function raf(time) {
-      lenis.raf(time)
-      parallaxEffect()
-      requestAnimationFrame(raf)
+    function handleScroll() {
+      requestAnimationFrame(parallaxEffect)
     }
 
-    requestAnimationFrame(raf)
-
+    window.addEventListener('scroll', handleScroll)
+    
     return () => {
-      lenis.destroy()
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
