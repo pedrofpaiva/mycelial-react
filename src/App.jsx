@@ -103,11 +103,11 @@ function App() {
           }}
         >
           <div className="max-w-[800px]">
-            <h1 className="text-[72px] font-bold mb-8 leading-none tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
+            <h1 className="text-[42px] md:text-[72px] font-bold mb-8 leading-none tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
               Flourishing People
             </h1>
             <p className="text-xl leading-relaxed opacity-90 max-w-2xl text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
-              Mycelial Health is dedicated to the natural cultivation, research and development of psilocybin and related species of mushroom. With the goal of supporting their use in effective treatment of mental and public health issues in the USVI and beyond.
+              Mycelial Health is dedicated to the natural cultivation, research and development of psilocybin-containing mushrooms and related species of mushroom. With the goal of supporting their use in effective treatment of mental and public health issues in the U.S. Virgin Islands and beyond.
             </p>
           </div>
         </motion.div>
@@ -116,17 +116,17 @@ function App() {
       {/* News and Events Section */}
       <section id="news" className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28 bg-[#F2F2F2]">
         <div className="container">
-          <div className="flex flex-col max-w-[724px] ml-[5%]">
+          <div className="flex flex-col max-w-[724px] ml-0 md:ml-[5%]">
             <div className="mb-12">
-              <h1 className="text-[#294C60] text-5xl font-bold">News And Events</h1>
+              <h1 className="text-[#294C60] text-3xl md:text-5xl font-bold">News And Events</h1>
             </div>
             <div className="flex flex-col gap-6">
               {[
                 {
                   image: eventImage,
                   title: 'Mushroom Cultivation Workshop',
-                  description: 'Mycelial Health is holding a conference in the U.S. Virgin Islands, from February 5-7, 2026, to learn about our latest projects in cultivating medicinal mushrooms and advancing innovative mental health treatments. This is an invitation only event, but contact us if you are interested in participating.',
-                  accommodation: 'For accommodations, guests can stay at The Hideaway at Hull Bay. If you would like to extend your stay, please contactat 888-336-1586.',
+                  description: 'Mycelial Health is holding a summit in the U.S. Virgin Islands, from February 5-7, 2026, to discuss our latest projects in cultivating medicinal mushrooms and advancing innovative mental health treatments with local and national stakeholders. This is an invitation only event, but please contact us if you are interested in participating.',
+                  accommodation: 'The event will be hosted at The Hideaway at Hull Bay which also has accommodations available. If you would like to book a stay, please contact us at 888-336-1586. Other accommodations are available and we would be happy to help coordinate through info@mycelial.health.',
                   hotelUrl: 'https://hideawayhullbay.com/'
                   
                 }
@@ -156,8 +156,8 @@ function App() {
                       <div className="flex flex-col gap-3 pt-4">
                         <div className="flex flex-wrap gap-1">
                           <span className="inline-flex items-center rounded-full bg-[#F5DFCB] px-2 py-0.5 text-xs font-medium text-black ring-1 ring-inset ring-[#E5CFB8]">Workshop</span>
-                          <span className="inline-flex items-center rounded-full bg-[#F5DFCB] px-2 py-0.5 text-xs font-medium text-black ring-1 ring-inset ring-[#E5CFB8]">Online</span>
-                          <span className="inline-flex items-center rounded-full bg-[#F5DFCB] px-2 py-0.5 text-xs font-medium text-black ring-1 ring-inset ring-[#E5CFB8]">Cultivation</span>
+                          <span className="inline-flex items-center rounded-full bg-[#F5DFCB] px-2 py-0.5 text-xs font-medium text-black ring-1 ring-inset ring-[#E5CFB8]">Mental Health</span>
+                          <span className="inline-flex items-center rounded-full bg-[#F5DFCB] px-2 py-0.5 text-xs font-medium text-black ring-1 ring-inset ring-[#E5CFB8]">Mycology</span>
                         </div>
                         {/* <button className="rounded-button inline-flex items-center justify-start whitespace-nowrap transition-all duration-200 ease-in-out hover:translate-x-1 focus-visible:outline-none text-blue-600 gap-2 bg-transparent p-0 text-sm" title="View event">
                           View event
@@ -179,18 +179,18 @@ function App() {
       <section id="team" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#FFFFFF]">
         <div className="container">
           <div className="mx-auto mb-12 max-w-[37rem] text-center md:mb-18 lg:mb-20">
-            <h2 className="text-[#294C60] mb-5 text-[56px] font-bold">About Us</h2>
+            <h2 className="text-[#294C60] mb-5 text-[36px] md:text-[56px] font-bold">About Us</h2>
             <p className="text-[#000] md:text-md">Our mission is to promote human flourishing by supporting psychedelic - assisted mental health research, advanced mycotechnogy, (including complementary functional mushrooms) and novel, equitable treatment solutions.</p>
           </div>
           <div className="grid grid-cols-1 items-start justify-center gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-4 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
             {[
-              { name: 'David Holmes', title: 'Founder, Co-CEO', image: holmesImage },
-              { name: 'Haydn Mitchell', title: 'Founder, Co-CEO', image: mitchellImage },
-              { name: 'Peter Hendricks, PhD', title: 'Co-Founder, Chief Scientific Officer', image: hendricksImage },
-              { name: 'Deirdre West', title: 'Co-Founder, Clinical Director', image: westImage },
-              { name: 'Cletis Clendinen', title: 'Community Relations', image: clendrinenImage },
-              { name: 'Dr. Bryn Dentinger', title: 'Director of Research', image: dentingerImage },
-              { name: 'Danielle Holmes', title: 'Program Coordinator', image: danielleImage }
+              { name: 'David Holmes', title: 'Chief Executive Officer', image: holmesImage, linkedin:'https://www.linkedin.com/in/davidgaholmes/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', website: 'https://www.littlenorthside.com/' },
+              { name: 'Haydn Mitchell', title: 'Chief Operations Officer', image: mitchellImage, linkedin:'https://www.linkedin.com/in/haydntmitchell/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', website: 'https://scholar.google.com/citations?user=zO9PrVgAAAAJ&hl=en' },
+              { name: 'Peter Hendricks, PhD', title: 'Chief Scientific Officer', image: hendricksImage, linkedin:'https://www.linkedin.com/in/peter-hendricks-193b346/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', website: 'https://scholar.google.com/citations?user=zv_8EzgAAAAJ&hl=en' },
+              { name: 'Deirdre West', title: 'Co-Founder, Clinical Director', image: westImage, linkedin:'https://www.linkedin.com/in/deirdre-west-roy-652bb329/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', website: 'https://mindfulwellnessvi.com/' },
+              { name: 'Cletis Clendinen', title: 'Community Relations', image: clendrinenImage, linkedin:'ios_appios_apphttps://www.linkedin.com/in/cletis-clendinen-ab5a0a49/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', website: '' },
+              { name: 'Bryn Dentinger, PhD', title: 'Director of Research', image: dentingerImage, linkedin:'https://www.linkedin.com/in/bryn-dentinger-2b624514/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', website: 'https://dentingerlab.org/' },
+              { name: 'Danielle Holmes', title: 'Program Coordinator', image: danielleImage, linkedin:'https://www.linkedin.com/in/danielle-holmes-284a5a15a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', website: '' }
             ].map((member, index) => (
               <div key={index} className="flex flex-col text-center">
                 <div className="rb-5 mb-5 flex w-full items-center justify-center md:mb-6">
@@ -201,8 +201,10 @@ function App() {
                   <h6 className="text-[rgb(75,85,99)] text-[14px]">{member.title}</h6>
                 </div>
                 <div className="mt-3 grid grid-flow-col grid-cols-[max-content] gap-3.5 self-center text-[#333333]">
-                  <a href="#" className="text-[#333333] hover:opacity-80 transition-colors"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"></path></svg></a>
-                  <a href="#" className="text-[#333333] hover:opacity-80 transition-colors"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20.66 6.98a9.932 9.932 0 0 0-3.641-3.64C15.486 2.447 13.813 2 12 2s-3.486.447-5.02 1.34c-1.533.893-2.747 2.107-3.64 3.64S2 10.187 2 12s.446 3.487 1.34 5.02a9.924 9.924 0 0 0 3.641 3.64C8.514 21.553 10.187 22 12 22s3.486-.447 5.02-1.34a9.932 9.932 0 0 0 3.641-3.64C21.554 15.487 22 13.813 22 12s-.446-3.487-1.34-5.02zM12 3.66c2 0 3.772.64 5.32 1.919-.92 1.174-2.286 2.14-4.1 2.9-1.002-1.813-2.088-3.327-3.261-4.54A7.715 7.715 0 0 1 12 3.66zM5.51 6.8a8.116 8.116 0 0 1 2.711-2.22c1.212 1.201 2.325 2.7 3.34 4.5-2 .6-4.114.9-6.341.9-.573 0-1.006-.013-1.3-.04A8.549 8.549 0 0 1 5.51 6.8zM3.66 12c0-.054.003-.12.01-.2.007-.08.01-.146.01-.2.254.014.641.02 1.161.02 2.666 0 5.146-.367 7.439-1.1.187.373.381.793.58 1.26-1.32.293-2.674 1.006-4.061 2.14S6.4 16.247 5.76 17.5c-1.4-1.587-2.1-3.42-2.1-5.5zM12 20.34c-1.894 0-3.594-.587-5.101-1.759.601-1.187 1.524-2.322 2.771-3.401 1.246-1.08 2.483-1.753 3.71-2.02a29.441 29.441 0 0 1 1.56 6.62 8.166 8.166 0 0 1-2.94.56zm7.08-3.96a8.351 8.351 0 0 1-2.58 2.621c-.24-2.08-.7-4.107-1.379-6.081.932-.066 1.765-.1 2.5-.1.799 0 1.686.034 2.659.1a8.098 8.098 0 0 1-1.2 3.46zm-1.24-5c-1.16 0-2.233.047-3.22.14a27.053 27.053 0 0 0-.68-1.62c2.066-.906 3.532-2.006 4.399-3.3 1.2 1.414 1.854 3.027 1.96 4.84-.812-.04-1.632-.06-2.459-.06z"></path></svg></a>
+                  <a href={member.linkedin} target='blank' className="text-[#333333] hover:opacity-80 transition-colors"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"></path></svg></a>
+                  {member.website && 
+                    <a href={member.website} target='blank' className="text-[#333333] hover:opacity-80 transition-colors"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20.66 6.98a9.932 9.932 0 0 0-3.641-3.64C15.486 2.447 13.813 2 12 2s-3.486.447-5.02 1.34c-1.533.893-2.747 2.107-3.64 3.64S2 10.187 2 12s.446 3.487 1.34 5.02a9.924 9.924 0 0 0 3.641 3.64C8.514 21.553 10.187 22 12 22s3.486-.447 5.02-1.34a9.932 9.932 0 0 0 3.641-3.64C21.554 15.487 22 13.813 22 12s-.446-3.487-1.34-5.02zM12 3.66c2 0 3.772.64 5.32 1.919-.92 1.174-2.286 2.14-4.1 2.9-1.002-1.813-2.088-3.327-3.261-4.54A7.715 7.715 0 0 1 12 3.66zM5.51 6.8a8.116 8.116 0 0 1 2.711-2.22c1.212 1.201 2.325 2.7 3.34 4.5-2 .6-4.114.9-6.341.9-.573 0-1.006-.013-1.3-.04A8.549 8.549 0 0 1 5.51 6.8zM3.66 12c0-.054.003-.12.01-.2.007-.08.01-.146.01-.2.254.014.641.02 1.161.02 2.666 0 5.146-.367 7.439-1.1.187.373.381.793.58 1.26-1.32.293-2.674 1.006-4.061 2.14S6.4 16.247 5.76 17.5c-1.4-1.587-2.1-3.42-2.1-5.5zM12 20.34c-1.894 0-3.594-.587-5.101-1.759.601-1.187 1.524-2.322 2.771-3.401 1.246-1.08 2.483-1.753 3.71-2.02a29.441 29.441 0 0 1 1.56 6.62 8.166 8.166 0 0 1-2.94.56zm7.08-3.96a8.351 8.351 0 0 1-2.58 2.621c-.24-2.08-.7-4.107-1.379-6.081.932-.066 1.765-.1 2.5-.1.799 0 1.686.034 2.659.1a8.098 8.098 0 0 1-1.2 3.46zm-1.24-5c-1.16 0-2.233.047-3.22.14a27.053 27.053 0 0 0-.68-1.62c2.066-.906 3.532-2.006 4.399-3.3 1.2 1.414 1.854 3.027 1.96 4.84-.812-.04-1.632-.06-2.459-.06z"></path></svg></a>
+                  }
                 </div>
               </div>
             ))}
@@ -213,23 +215,23 @@ function App() {
       {/* Footer */}
       <footer id="contact" className="px-[5%] py-8 bg-[#294C60] text-white">
         <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-8">
-            <div className="w-full md:w-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center pb-8">
+            <div className="w-full md:w-auto flex justify-center md:justify-start">
               <img src={logoWhite} alt="Mycelial Health Logo" className="h-16 w-auto" />
             </div>
             <div className="w-full md:w-auto flex flex-col md:flex-row gap-6 mt-8 md:mt-0 md:items-center">
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8">
-                <div>
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">
+                <div className="text-center md:text-left">
                   <h3 className="text-xs font-normal mb-1 md:mb-0">On Phone</h3>
                   <p className="text-sm font-bold">307-699-9271</p>
                 </div>
-                <div>
+                <div className="text-center md:text-left">
                   <h3 className="text-xs font-normal mb-1 md:mb-0">Online</h3>
                   <p className="text-sm font-bold">
                     <a href="mailto:info@mycelial.health" className="hover:opacity-80 transition-colors text-inherit decoration-none">info@mycelial.health</a>
                   </p>
                 </div>
-                <div>
+                <div className="text-center md:text-left">
                   <h3 className="text-xs font-normal mb-1 md:mb-0">On Land</h3>
                   <p className="text-sm font-bold">43 Norre Gade, St Thomas, VI 00802</p>
                 </div>
