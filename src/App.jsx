@@ -44,12 +44,12 @@ function App() {
   }, [])
 
   return (
-    <>
-      {/* Hero Section */}
-      <section className="min-h-screen relative flex items-center overflow-hidden" id="home">
-        {/* Navigation */}
+    <div className="flex flex-col items-center w-full">
+      {/* Hero Section - Full Width */}
+      <section className="min-h-screen relative flex items-center overflow-hidden w-full" id="home">
+        {/* Navigation - Centered with max-width */}
         <motion.nav 
-          className="absolute top-0 left-0 right-0 z-20 px-[5%] py-6 flex justify-between items-center"
+          className="absolute top-0 left-0 right-0 z-20 py-6 flex justify-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -58,8 +58,10 @@ function App() {
             delay: 0.9
           }}
         >
-          <img src={logoWhite} alt="Mycelial Health Logo" className="h-24 w-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]" />
-          <a href="#team" className="nav-link text-white text-lg font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] no-underline">About Us</a>
+          <div className="w-full max-w-[1536px] pl-0 pr-[5%] flex justify-between items-center">
+            <img src={logoWhite} alt="Mycelial Health Logo" className="h-24 w-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]" />
+            <a href="#team" className="nav-link text-white text-lg font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] no-underline">About Us</a>
+          </div>
         </motion.nav>
 
         {/* Background Image with Parallax and Fade */}
@@ -91,9 +93,9 @@ function App() {
           }}
         />
         
-        {/* Content with Parallax and Fade */}
+        {/* Content with Parallax and Fade - Centered with max-width */}
         <motion.div 
-          className="hero-content relative z-10 container mx-auto px-[5%] mt-24 will-change-transform"
+          className="hero-content relative z-10 w-full flex justify-center mt-24 will-change-transform"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -102,21 +104,23 @@ function App() {
             delay: 0.6
           }}
         >
-          <div className="max-w-[800px]">
-            <h1 className="text-[42px] md:text-[72px] font-bold mb-8 leading-none tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
-              Flourishing People
-            </h1>
-            <p className="text-xl leading-relaxed opacity-90 max-w-2xl text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
-              Mycelial Health is dedicated to the natural cultivation, research and development of psilocybin-containing mushrooms and related species of mushroom. With the goal of supporting their use in effective treatment of mental and public health issues in the U.S. Virgin Islands and beyond.
-            </p>
+          <div className="w-full max-w-[1536px] px-[5%]">
+            <div className="max-w-[800px]">
+              <h1 className="text-[42px] md:text-[72px] font-bold mb-8 leading-none tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
+                Flourishing People
+              </h1>
+              <p className="text-xl leading-relaxed opacity-90 max-w-2xl text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
+                Mycelial Health is dedicated to the natural cultivation, research and development of psilocybin-containing mushrooms and related species of mushroom. With the goal of supporting their use in effective treatment of mental and public health issues in the U.S. Virgin Islands and beyond.
+              </p>
+            </div>
           </div>
         </motion.div>
       </section>
 
       {/* News and Events Section */}
-      <section id="news" className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28 bg-[#F2F2F2]">
-        <div className="container">
-          <div className="flex flex-col max-w-[724px] ml-0 md:ml-[5%]">
+      <section id="news" className="overflow-hidden py-16 md:py-24 lg:py-28 bg-[#F2F2F2] w-full flex justify-center">
+        <div className="w-full max-w-[1536px] px-[5%]">
+          <div className="flex flex-col max-w-[724px]">
             <div className="mb-12">
               <h1 className="text-[#294C60] text-3xl md:text-5xl font-bold">News And Events</h1>
             </div>
@@ -176,8 +180,8 @@ function App() {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#FFFFFF]">
-        <div className="container">
+      <section id="team" className="py-16 md:py-24 lg:py-28 bg-[#FFFFFF] w-full flex justify-center">
+        <div className="w-full max-w-[1536px] px-[5%]">
           <div className="mx-auto mb-12 max-w-[37rem] text-center md:mb-18 lg:mb-20">
             <h2 className="text-[#294C60] mb-5 text-[36px] md:text-[56px] font-bold">About Us</h2>
             <p className="text-[#000] md:text-md">Our mission is to promote human flourishing by supporting psychedelic - assisted mental health research, advanced mycotechnogy, (including complementary functional mushrooms) and novel, equitable treatment solutions.</p>
@@ -213,8 +217,8 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="px-[5%] py-8 bg-[#294C60] text-white">
-        <div className="container">
+      <footer id="contact" className="py-8 bg-[#294C60] text-white w-full flex justify-center">
+        <div className="w-full max-w-[1536px] px-[5%]">
           <div className="flex flex-col md:flex-row justify-between items-center pb-8">
             <div className="w-full md:w-auto flex justify-center md:justify-start">
               <img src={logoWhite} alt="Mycelial Health Logo" className="h-16 w-auto" />
@@ -254,9 +258,9 @@ function App() {
               </a>
             </div>
           </div>
-    </div>
+        </div>
       </footer>
-    </>
+    </div>
   )
 }
 
