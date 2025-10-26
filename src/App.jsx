@@ -76,7 +76,10 @@ function App() {
         >
           <img 
             src={heroBackground} 
-            alt="Hero Background" 
+            alt="Hero Background"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
             className="hero-background absolute inset-0 w-full h-[120%] -top-[10%] object-cover origin-top will-change-transform"
           />
         </motion.div>
